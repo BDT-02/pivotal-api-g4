@@ -1,10 +1,17 @@
 from src.pivotal_api_services.pivotal_services import PivotalServices
 from src.utils.LoggerHandler import LoggerHandler
+
 from src.utils.file_reader import FileReader
 from src.utils.string_handler import StringHandler
 
 logger = LoggerHandler.get_instance()
 
+
+
+# from src.utils.file_reader import FileReader
+from src.utils.string_handler import StringHandler
+
+logger = LoggerHandler.get_instance()
 
 class ProjectServices(PivotalServices):
 
