@@ -24,3 +24,9 @@ def step_impl(context):
     schema = account_services.get_account_schema()
     schema_failure_reason, is_schema_valid = validate_json_schema(schema, actual_response)
     assert is_schema_valid, "Account Schema failed due to: {}".format(schema_failure_reason)
+    
+    
+@Given("I get the first account")
+def step_impl(context):
+    context.account = account_services.get_accounts()  # type: object
+    print context.account
