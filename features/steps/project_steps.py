@@ -26,3 +26,6 @@ def step_impl(context):
     schema = project_services.get_project_schema()
     schema_failure_reason, is_schema_valid = validate_json_schema(schema, actual_response)
     assert is_schema_valid, "Project Schema failed due to: {}".format(schema_failure_reason)
+
+
+    raise NotImplementedError(u'STEP: Then I verify workspace creation status is 200')
