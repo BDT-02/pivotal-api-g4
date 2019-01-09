@@ -53,3 +53,7 @@ class RequestHandler:
         session.mount('http://', adapter)
         session.mount('https://', adapter)
         return session
+
+    @main_url.setter
+    def main_url(self, value):
+        self._main_url = value

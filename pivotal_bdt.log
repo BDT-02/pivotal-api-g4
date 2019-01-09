@@ -199,3 +199,11 @@
 01-09 09:57 parse        DEBUG    format u'I verify workspace schema' -> u'I verify workspace schema'
 01-09 09:57 root         INFO     RequestHandler:: POST  https://www.pivotaltracker.com/services/v5/my/workspaces, {"name": "New Workspace"}, {'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.20.1', 'Connection': 'keep-alive', 'X-TrackerToken': '566c34917ebf39c315d47cd9f2dcd1b5', 'Content-Type': 'application/json'}
 01-09 09:57 root         INFO     RequestHandler:: POST RESPONSE:: 200, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}
+01-09 10:00 parse        DEBUG    format u'I create a project' -> u'I create a project'
+01-09 10:00 parse        DEBUG    format u'I verify project creation status is {status_code}' -> u'I verify project creation status is (?P<status_code>.+?)'
+01-09 10:00 parse        DEBUG    format u'I verify project schema' -> u'I verify project schema'
+01-09 10:00 parse        DEBUG    format u'I create a Workspace' -> u'I create a Workspace'
+01-09 10:00 parse        DEBUG    format u'I verify workspace creation status is {status_code}' -> u'I verify workspace creation status is (?P<status_code>.+?)'
+01-09 10:00 parse        DEBUG    format u'I verify workspace schema' -> u'I verify workspace schema'
+01-09 10:00 root         INFO     RequestHandler:: POST  https://www.pivotaltracker.com/services/v5/my/workspaces, {"name": "New Workspace"}, {'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.20.1', 'Connection': 'keep-alive', 'X-TrackerToken': '566c34917ebf39c315d47cd9f2dcd1b5', 'Content-Type': 'application/json'}
+01-09 10:00 root         INFO     RequestHandler:: POST RESPONSE:: 400, {u'kind': u'error', u'code': u'invalid_parameter', u'general_problem': u'The workspace name you entered is already taken.', u'error': u'One or more request parameters was missing or invalid.'}
