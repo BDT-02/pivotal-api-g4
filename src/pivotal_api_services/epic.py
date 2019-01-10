@@ -6,12 +6,12 @@ from src.utils.string_handler import StringHandler
 logger = LoggerHandler.get_instance()
 
 
-class ProjectServices(PivotalServices):
+class EpicServices(PivotalServices):
 
     def __init__(self):
-        super(ProjectServices, self).__init__()
-        self.__project = "{}/projects".format(self.request_handler.main_url)
-        self.__project_schema_path = "/src/core/api/json_schemas/project_schema.json"
+        super(EpicServices, self).__init__()
+        self.__project = "{}/epic".format(self.request_handler.main_url)
+        self.__project_schema_path = "/src/core/api/json_schemas/epic_schema.json"
         self.project = {}
         self.projects = {}
 

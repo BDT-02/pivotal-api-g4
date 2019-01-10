@@ -1,26 +1,57 @@
-from behave import Given, then, step
+from behave import given,then, step
 
-from src.pivotal_api_services.projects import ProjectServices
+from src.pivotal_api_services.epic import EpicServices
 from src.utils.json_schema_validator import validate_json_schema
 
-project_services = ProjectServices()
+epic_services = EpicServices()
 
 
-@Given(u"I create a project")
-def create_project_step(context):
-    data = {"name": "New Project1"}
-    context.project_status, context.project_response = project_services.create_project(data)
+@step("I create a epic")
+def create_epic_step(context):
+    data = {}
+    for row in context.table:
+        data = {"name": str(row['label'])}
+    context.epic_status, context.epic_response = epic_services.create_epic(
+        id_project=str(context.project_response["id"]), data=data)
 
 
-@then(u'I verify project creation status is {status_code}')
+@step("I update a epic")
+def update_epic_step(context):
+    data = {}
+    for row in context.table:
+        data = {"name": str(row['label'])}
+    context.epic_status, context.epic_response = epic_services.update_epic(
+        id_project=str(context.project_response["id"]), id_epic=str(context.epic_response["id"]), data=data)
+
+
+@step("I delete the epic")
+def update_project_step(context):
+    context.epic_status = epic_services.delete_epic(id_project=str(context.project_response["id"]),
+                                                    id_epic=str(context.epic_response["id"]))
+
+
+@then('I verify epic updated status is {status_code}')
 def step_impl(context, status_code):
-    print(context.project_status)
-    assert context.project_status == status_code, "Project creation status is %s" % status_code
+    print(context.epic_status)
+    assert context.epic_status == int(status_code), "Epic updated status is %s" % status_code
 
 
-@step(u'I verify project schema')
+@then('I verify epic created status is {status_code}')
+def step_impl(context, status_code):
+    print(context.epic_status)
+    assert context.epic_status == int(status_code), "Epic creation status is %s" % status_code
+
+
+@then('I verify epic deleted status is {status_code}')
+def step_impl(context, status_code):
+    print(context.epic_status)
+    assert context.epic_status == int(status_code), "epic deleted status is %s" % status_code
+
+
+@step('I verify epic schema')
 def step_impl(context):
-    actual_response = project_services.get_project(id=str(context.project_response["id"]))
-    schema = project_services.get_project_schema()
+    actual_response = epic_services.get_epic(id_project=str(context.project_response["id"]),
+                                             id_epic=str(context.epic_response["id"]))
+    schema = epic_services.get_epic_schema()
     schema_failure_reason, is_schema_valid = validate_json_schema(schema, actual_response)
-    assert is_schema_valid, "Project Schema failed due to: {}".format(schema_failure_reason)
+assert is_schema_valid, "Project Schema failed due to: {}".format(schema_failure_reason)
