@@ -26,7 +26,12 @@ def step_impl(context):
     assert is_schema_valid, "Account Schema failed due to: {}".format(schema_failure_reason)
     
     
-@Given("I get the first account")
+@Given("I get accounts")
 def step_impl(context):
-    context.account = account_services.get_accounts()  # type: object
+    context.account = account_services.get_accounts()
     print context.account
+
+@then(u'I verify the get status is {status_code}')
+def step_impl(context, status_code):
+    print(context.account_status)
+    assert context.project_status == status_code, "Account creation status is %s" % status_code

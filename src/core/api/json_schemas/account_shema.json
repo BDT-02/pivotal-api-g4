@@ -14,6 +14,7 @@
     "updated_at"
 
    ],
+
    "properties": {
      "created at": {
        "$id": "#/properties/created at",
@@ -25,6 +26,33 @@
        ],
        "pattern": "^(.*)$"
      },
+
+     "kind": {
+      "$id": "#/properties/kind",
+      "type": "string",
+      "title": "The Kind Schema",
+      "default": "",
+      "examples": [
+        "account"
+      ],
+      "pattern": "^(.*)$"
+    },
+
+
+     "plan": {
+      "$id": "#/properties/plan",
+      "type": "string",
+      "title": "The Plan Schema",
+      "default": "",
+      "examples": [
+        "Free"
+      ],
+      "pattern": "^(.*)$"
+    },
+
+
+
+
      "updated at": {
        "$id": "#/properties/updated at",
        "type": "string",

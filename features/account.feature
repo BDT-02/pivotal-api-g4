@@ -7,4 +7,16 @@
 
 Feature: Get new account
   Scenario: Get account
-    Given I get the first account
+    Given I get accounts
+    #Then I verify the get status is 200
+    #And I verify account schema
+
+
+   Scenario: Details of existent account
+    Given I selected account_01 from the list
+    When I requested its details
+    Then verify the get status is 200
+    And verify account schema
+
+
+
