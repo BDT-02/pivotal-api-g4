@@ -54,4 +54,4 @@ def step_impl(context):
                                              id_epic=str(context.epic_response["id"]))
     schema = epic_services.get_epic_schema()
     schema_failure_reason, is_schema_valid = validate_json_schema(schema, actual_response)
-assert is_schema_valid, "Project Schema failed due to: {}".format(schema_failure_reason)
+    assert is_schema_valid, "Project Schema failed due to: {}".format(schema_failure_reason)

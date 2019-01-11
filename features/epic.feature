@@ -14,12 +14,12 @@ Feature: behave to epic
     And I verify epic schema
 
 
-  Scenario: Delete the epic
-    Given I create a project
-      | name          |
-      | First Project |
-    And I create a epic
-      | label      |
-      | Test epics |
-    When I delete the epic
-Then I verify epic updated status is 204
+#  Scenario: Delete the epic
+#    Given I create a project
+#      | name          |
+#      | First Project |
+#    And I create a epic
+#      | label      |
+#      | Test epics |
+#    When I delete the epic
+#    Then I verify epic updated status is 204

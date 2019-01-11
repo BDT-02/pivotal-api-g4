@@ -29,4 +29,4 @@ def step_impl(context):
 
 @Given("I delete all projects")
 def step_impl(context):
-project_services.delete_all_projects()
+    project_services.delete_all_projects()

@@ -22,7 +22,7 @@ class ConfigReader:
     def get_cookie(self):
         return self.config["api"]["cookie"]
 
-    def get_xcrftoken(self):
+    def get_XCSRFToken(self):
         return self.config["api"]["XCSRFToken"]
 
 
