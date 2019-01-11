@@ -1,14 +1,6 @@
 Feature: behave to epic
 
-#Scenario:Create new project
-#    Given I create a project
-#        | name | First Project|
-#    Then I verify project creation status is 200
-#    And I verify project schema
-
-
-
-  Scenario: Update the epic
+ Scenario: Update the epic
     Given I create a new project
       | name          |
       | First Project |
