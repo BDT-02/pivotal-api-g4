@@ -6,7 +6,7 @@ from src.utils.json_schema_validator import validate_json_schema
 epic_services = EpicServices()
 
 
-@step("I create a epic")
+@step("I create a new epic")
 def create_epic_step(context):
     data = {}
     for row in context.table:
@@ -15,7 +15,7 @@ def create_epic_step(context):
         id_project=str(context.project_response["id"]), data=data)
 
 
-@step("I update a epic")
+@step("I update the epic")
 def update_epic_step(context):
     data = {}
     for row in context.table:

@@ -1,4 +1,4 @@
-Feature: showing off behave
+Feature: behave to epic
 
 #Scenario:Create new project
 #    Given I create a project
@@ -9,13 +9,13 @@ Feature: showing off behave
 
 
   Scenario: Update the epic
-    Given I create a project
+    Given I create a new project
       | name          |
       | First Project |
-    And I create a epic
+    And I create a new epic
       | label      |
       | Test epics |
-    When I update a epic
+    When I update the epic
       | label             |
       | Test Update epics |
     Then I verify epic updated status is 200
