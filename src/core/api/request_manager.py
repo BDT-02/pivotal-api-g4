@@ -10,6 +10,13 @@ class RequestManager:
         if RequestManager.__instance is None:
             RequestManager.__instance = RequestHandler()
             RequestManager.__instance.session.headers.update(
-                {"X-TrackerToken": ConfigHandler.get_config().get_token(),
-                 "Content-Type": "application/json"})
+                {"X-Requested-With": "XMLHttpRequest",
+                 "Content-Type": "application/json",
+                 "Cookie" : ConfigHandler.get_config().get_cookie(),
+                 "X-CSRF-Token" : ConfigHandler.get_config().get_XCSRFToken()
+                 })
+
+
+
+
         return RequestManager.__instance
