@@ -53,8 +53,4 @@ class WorkspaceServices(PivotalServices):
     def delete_workspace(self, id):
         current_url = self.__workspace + "/" + str(id)
         response = self.request_handler.delete_request(endpoint=current_url)
-<<<<<<< HEAD
-return response.status_code, response.reason
-=======
-        return response.status_code, response.reason
->>>>>>> 209d0053ba658a9d270aecf797a8041b45344928
+

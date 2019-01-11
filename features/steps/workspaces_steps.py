@@ -1,4 +1,4 @@
-from behave import given, when, then
+from behave import given, when, then, step
 
 from src.pivotal_api_services.workspaces import WorkspaceServices
 from src.utils.json_schema_validator import validate_json_schema
@@ -57,7 +57,6 @@ def step_impl(context):
         workspace_services.delete_workspace(context.workspace_id)
 
 
-<<<<<<< HEAD
 @then('the response reason is "{reason}"')
 def step_impl(context, reason):
     assert context.response_reason == reason, "Workspace response reason is '%s'" % reason
@@ -70,24 +69,4 @@ def delete_workspaces(context):
 
 @then("verify the list is empty")
 def step_impl(context):
-assert not workspace_services.get_workspaces(), "There is still workspaces"
-=======
-@Given(u"I create a Workspace")
-def create_workspace_step(context):
-    data = {"name": "New Workspace"}
-    context.workspace_status, context.workspaces_response = workspaces_services.create_workspace(data)
-
-
-@then(u'I verify workspace creation status is {status_code}')
-def step_impl(context, status_code):
-    print(context.workspace_status)
-    assert context.workspace_status == status_code, "Workspace creation status is %s" % status_code
-
-
-@step(u'I verify workspace schema')
-def step_impl(context):
-    actual_response = workspaces_services.get_workspace(id=str(context.workspace_response["id"]))
-    schema = workspaces_services.get_workspace_schema()
-    schema_failure_reason, is_schema_valid = validate_json_schema(schema, actual_response)
-    assert is_schema_valid, "Workspace Schema failed due to: {}".format(schema_failure_reason)
->>>>>>> 209d0053ba658a9d270aecf797a8041b45344928
+    assert not workspace_services.get_workspaces(), "There is still workspaces"

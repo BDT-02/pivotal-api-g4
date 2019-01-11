@@ -207,3 +207,82 @@
 01-09 10:00 parse        DEBUG    format u'I verify workspace schema' -> u'I verify workspace schema'
 01-09 10:00 root         INFO     RequestHandler:: POST  https://www.pivotaltracker.com/services/v5/my/workspaces, {"name": "New Workspace"}, {'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.20.1', 'Connection': 'keep-alive', 'X-TrackerToken': '566c34917ebf39c315d47cd9f2dcd1b5', 'Content-Type': 'application/json'}
 01-09 10:00 root         INFO     RequestHandler:: POST RESPONSE:: 400, {u'kind': u'error', u'code': u'invalid_parameter', u'general_problem': u'The workspace name you entered is already taken.', u'error': u'One or more request parameters was missing or invalid.'}
+01-11 09:06 parse        DEBUG    format u'I create a project' -> u'I create a project'
+01-11 09:06 parse        DEBUG    format u'I verify project creation status is {status_code}' -> u'I verify project creation status is (?P<status_code>.+?)'
+01-11 09:06 parse        DEBUG    format u'I verify project schema' -> u'I verify project schema'
+01-11 09:07 parse        DEBUG    format u'I create a project' -> u'I create a project'
+01-11 09:07 parse        DEBUG    format u'I verify project creation status is {status_code}' -> u'I verify project creation status is (?P<status_code>.+?)'
+01-11 09:07 parse        DEBUG    format u'I verify project schema' -> u'I verify project schema'
+01-11 09:07 parse        DEBUG    format u'I have the workspaces list' -> u'I have the workspaces list'
+01-11 09:07 parse        DEBUG    format u'I created the workspace {name}' -> u'I created the workspace (?P<name>.+?)'
+01-11 09:07 parse        DEBUG    format u'verify the {action_type} status is {status_code}' -> u'verify the (?P<action_type>.+?) status is (?P<status_code>.+?)'
+01-11 09:07 parse        DEBUG    format u'verify the workspace schema' -> u'verify the workspace schema'
+01-11 09:07 parse        DEBUG    format u'verify the workspace {name} exists' -> u'verify the workspace (?P<name>.+?) exists'
+01-11 09:07 parse        DEBUG    format u'I selected {name} from the list' -> u'I selected (?P<name>.+?) from the list'
+01-11 09:07 parse        DEBUG    format u'I requested its details' -> u'I requested its details'
+01-11 09:07 parse        DEBUG    format u'I requested delete it' -> u'I requested delete it'
+01-11 09:07 parse        DEBUG    format u'the response reason is "{reason}"' -> u'the response reason is "(?P<reason>.+?)"'
+01-11 09:07 parse        DEBUG    format u'I delete all the workspaces' -> u'I delete all the workspaces'
+01-11 09:07 parse        DEBUG    format u'verify the list is empty' -> u'verify the list is empty'
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, [{u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722861, u'name': u'Test1'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722862, u'name': u'A new workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}]
+01-11 09:07 root         INFO     RequestHandler:: POST  https://www.pivotaltracker.com/services/v5/my/workspaces, {"name": "Workspace_01"}, {'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.20.1', 'Connection': 'keep-alive', 'X-TrackerToken': '566c34917ebf39c315d47cd9f2dcd1b5', 'Content-Type': 'application/json'}
+01-11 09:07 root         INFO     RequestHandler:: POST RESPONSE:: 200, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces/723114
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}
+01-11 09:07 root         INFO     Getting Content of file::/src/core/api/json_schemas/workspace_schema.json
+01-11 09:07 root         INFO     Validate Schema
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, [{u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722861, u'name': u'Test1'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722862, u'name': u'A new workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}]
+01-11 09:07 root         INFO     RequestHandler:: POST  https://www.pivotaltracker.com/services/v5/my/workspaces, {"name": "Workspace_02"}, {'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.20.1', 'Connection': 'keep-alive', 'X-TrackerToken': '566c34917ebf39c315d47cd9f2dcd1b5', 'Content-Type': 'application/json'}
+01-11 09:07 root         INFO     RequestHandler:: POST RESPONSE:: 200, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723115, u'name': u'Workspace_02'}
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces/723115
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723115, u'name': u'Workspace_02'}
+01-11 09:07 root         INFO     Getting Content of file::/src/core/api/json_schemas/workspace_schema.json
+01-11 09:07 root         INFO     Validate Schema
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, [{u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722861, u'name': u'Test1'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722862, u'name': u'A new workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723115, u'name': u'Workspace_02'}]
+01-11 09:07 root         INFO     RequestHandler:: POST  https://www.pivotaltracker.com/services/v5/my/workspaces, {"name": "Workspace_03"}, {'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.20.1', 'Connection': 'keep-alive', 'X-TrackerToken': '566c34917ebf39c315d47cd9f2dcd1b5', 'Content-Type': 'application/json'}
+01-11 09:07 root         INFO     RequestHandler:: POST RESPONSE:: 200, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723116, u'name': u'Workspace_03'}
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces/723116
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723116, u'name': u'Workspace_03'}
+01-11 09:07 root         INFO     Getting Content of file::/src/core/api/json_schemas/workspace_schema.json
+01-11 09:07 root         INFO     Validate Schema
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, [{u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722861, u'name': u'Test1'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722862, u'name': u'A new workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723115, u'name': u'Workspace_02'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723116, u'name': u'Workspace_03'}]
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces/723114
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces/723114
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}
+01-11 09:07 root         INFO     Getting Content of file::/src/core/api/json_schemas/workspace_schema.json
+01-11 09:07 root         INFO     Validate Schema
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, [{u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722861, u'name': u'Test1'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722862, u'name': u'A new workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723115, u'name': u'Workspace_02'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723116, u'name': u'Workspace_03'}]
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces/1
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 404, {u'kind': u'error', u'code': u'unfound_resource', u'error': u'The object you tried to access could not be found.  It may have been removed by another user, you may be using the ID of another object type, or you may be trying to access a sub-resource at the wrong point in a tree.'}
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, [{u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722861, u'name': u'Test1'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722862, u'name': u'A new workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723115, u'name': u'Workspace_02'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723116, u'name': u'Workspace_03'}]
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces/12E45
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 403, {u'kind': u'error', u'code': u'unauthorized_operation', u'possible_fix': u"Your project permissions are determined on the Project Membership page. If you are receiving this error you may be trying to access the wrong project, or the project API access is disabled, or someone listed as the project's Owner needs to change your membership type.", u'general_problem': u"You aren't authorized to access the requested resource.", u'error': u'Authorization failure.'}
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, [{u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722861, u'name': u'Test1'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722862, u'name': u'A new workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723115, u'name': u'Workspace_02'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723116, u'name': u'Workspace_03'}]
+01-11 09:07 root         INFO     RequestHandler:: DELETE  https://www.pivotaltracker.com/services/v5/my/workspaces/723116
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, [{u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722861, u'name': u'Test1'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722862, u'name': u'A new workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723115, u'name': u'Workspace_02'}]
+01-11 09:07 root         INFO     RequestHandler:: DELETE  https://www.pivotaltracker.com/services/v5/my/workspaces/1
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, [{u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722861, u'name': u'Test1'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722862, u'name': u'A new workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 722882, u'name': u'New Workspace'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723114, u'name': u'Workspace_01'}, {u'person_id': 3128921, u'kind': u'workspace', u'project_ids': [], u'id': 723115, u'name': u'Workspace_02'}]
+01-11 09:07 root         INFO     Deleting https://www.pivotaltracker.com/services/v5/my/workspaces/722861
+01-11 09:07 root         INFO     RequestHandler:: DELETE  https://www.pivotaltracker.com/services/v5/my/workspaces/722861
+01-11 09:07 root         INFO     Deleting https://www.pivotaltracker.com/services/v5/my/workspaces/722882
+01-11 09:07 root         INFO     RequestHandler:: DELETE  https://www.pivotaltracker.com/services/v5/my/workspaces/722882
+01-11 09:07 root         INFO     Deleting https://www.pivotaltracker.com/services/v5/my/workspaces/722862
+01-11 09:07 root         INFO     RequestHandler:: DELETE  https://www.pivotaltracker.com/services/v5/my/workspaces/722862
+01-11 09:07 root         INFO     Deleting https://www.pivotaltracker.com/services/v5/my/workspaces/723115
+01-11 09:07 root         INFO     RequestHandler:: DELETE  https://www.pivotaltracker.com/services/v5/my/workspaces/723115
+01-11 09:07 root         INFO     Deleting https://www.pivotaltracker.com/services/v5/my/workspaces/723116
+01-11 09:07 root         INFO     RequestHandler:: DELETE  https://www.pivotaltracker.com/services/v5/my/workspaces/723116
+01-11 09:07 root         INFO     Deleting https://www.pivotaltracker.com/services/v5/my/workspaces/723114
+01-11 09:07 root         INFO     RequestHandler:: DELETE  https://www.pivotaltracker.com/services/v5/my/workspaces/723114
+01-11 09:07 root         INFO     RequestHandler:: GET  https://www.pivotaltracker.com/services/v5/my/workspaces
+01-11 09:07 root         INFO     RequestHandler:: GET RESPONSE:: 200, []
